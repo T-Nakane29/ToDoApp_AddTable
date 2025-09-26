@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <h1>タスク管理アプリ</h1>
+    <button class="btn btn-secondary" onclick="openCreateModal()">新規タスク登録</button>
+    <form action="/logout" method="get" style="display:inline;">
+        <button type="submit" class="btn btn-outline-danger">ログアウト</button>
+    </form>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <!-- <th>ID</th> -->
+                <th>担当者名</th>
+                <th>タスク</th>
+                <th>期日</th>
+                <th>取引形態</th>
+                <th>物件種類</th>
+                <th>物件名</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for id, name, task, due_date, rent_buy, real_estate, real_estate_name, note in todo_data %}
+            <tr id="row{{ id }}">
+                <!-- <td class="id">{{ id }}</td> -->
+                <td class="name">{{ name }}</td>
+                <td class="task">{{ task }}</td>
+                <td class="due_date">{{ due_date }}</td>
+                <td class="rent_buy">{{ rent_buy }}</td>
+                <td class="real_estate">{{ real_estate }}</td>
+                <td class="real_estate_name">{{ real_estate_name }}</td>
+                <td class="note">{{ note }}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="openEditModal({{ id }})">編集</button>
+                </td>
+
+                <td>
+                    <form method="post" action="/delete" onsubmit="return delete_todo();">
+                        <input type="hidden" name="delete_id" value="{{ id }}">
+                        <button class="btn btn-danger">削除</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    <!--↓↓↓編集↓↓↓ -->
+    <!-- tabindex="-1"はモーダルウインドウをtabキーでフォーカスさせないようにする -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+        <!-- class="modal-dialog"はモーダルダイアログを表示するためのCSSクラス名 -->
+        <div class="modal-dialog">
+            <form method="POST" id="editForm" action="/update">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">変更項目を記載又は選択してください</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="update_id" id="edit_id">
+                        <input type="text" name="name" id="edit_name" class="form-control mb-3" placeholder="名前"
+                            readonly>
+                        <input type="text" name="task" id="edit_task" class="form-control mb-3" placeholder="タスク">
+                        <input type="date" name="due_date" id="edit_due_date" class="form-control mb-3">
+                        <div style="margin-bottom: 1em;">
+                            <div>取引形態</div>
+                            <input type="radio" name="rent_buy" id="edit_rent_buy_re" value="賃貸" checked>賃貸
+                            <input type="radio" name="rent_buy" id="edit_rent_buy_sa" value="売買">売買
+                            <input type="radio" name="rent_buy" id="edit_rent_buy_ma" value="管理">管理
+                        </div>
+                        <div style="margin-bottom: 1em;">
+                            <div>物件種類</div>
+                            <input type="radio" name="real_estate" id="edit_real_estate_la" value="土地" checked>土地
+                            <input type="radio" name="real_estate" id="edit_real_estate_ho" value="戸建て">戸建て
+                            <input type="radio" name="real_estate" id="edit_real_estate_ap" value="集合住宅">集合住宅
+                        </div>
+                        <input type="text" name="real_estate_name" id="edit_real_estate_name" class="form-control mb-3"
+                            placeholder="物件名">
+                        <textarea name="note" id="edit_note" class="form-control mb-3" placeholder="備考"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">保存</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--↑↑↑編集↑↑↑ -->
+
+    <!--↓↓↓新規追加↓↓↓ -->
+    <div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="POST" action="/add">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">新規タスク登録</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- ログイン時の名前を適応する -->
+                        <input type="text" name="name" class="form-control mb-2" placeholder="担当者名"
+                            value="{{ username }}" readonly>
+                        <input type="text" name="task" class="form-control mb-2" placeholder="タスク内容">
+                        <input type="date" name="due_date" class="form-control mb-2">
+                        <div class="mb-2">
+                            <div>取引形態</div>
+                            <input type="radio" name="rent_buy" value="賃貸" checked> 賃貸
+                            <input type="radio" name="rent_buy" value="売買"> 売買
+                            <input type="radio" name="rent_buy" value="管理"> 管理
+                        </div>
+                        <div class="mb-2">
+                            <div>物件種類</div>
+                            <input type="radio" name="real_estate" value="土地" checked> 土地
+                            <input type="radio" name="real_estate" value="戸建て"> 戸建て
+                            <input type="radio" name="real_estate" value="集合住宅"> 集合住宅
+                        </div>
+                        <input type="text" name="real_estate_name" class="form-control mb-2" placeholder="物件名"
+                            value="記載なし">
+                        <input type="text" name="note" class="form-control mb-2" placeholder="備考" value="記載なし">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">登録</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--↑↑↑新規追加↑↑↑ -->
+
+    <!--↓↓↓名前追加↓↓↓ -->
+    {% if session.get('is_admin') %}
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">
+        ユーザー登録
+    </button>
+    <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="POST" action="/add_user">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">新しいユーザーを登録</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="new_username" class="form-control" placeholder="ユーザー名を入力" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">登録</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    <!--↑↑↑名前追加↑↑↑ -->
+
+
+    <!--↓↓↓名前削除↓↓↓ -->
+    {% if session.get('is_admin') %}
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+        ユーザー削除
+    </button>
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="POST" action="/delete_user">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">ユーザー削除</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="delete_user_id" class="form-label">削除するユーザーを選択</label>
+                        <select name="delete_user_id" id="delete_user_id" class="form-select" required>
+                            <option value="">選択してください</option>
+                            {% for user in user_list %}
+                            <option value="{{ user[0] }}">{{ user[1] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">削除</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--↑↑↑名前削除↑↑↑ -->
+
+</div>
+{% endif %}
+{% endblock %}
