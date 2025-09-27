@@ -11,21 +11,18 @@
 ### フレームワーク：Flask
 ### 主要ライブラリ：Flask, render_template, request, redirect, session, settings, os
 ## ◎セットアップ手順
- ※①～③に関しては使用PCに合うものをインストールすること 
- ①Visual Studio Codeを下記URLからインストール 
-  https://code.visualstudio.com/ 
- ②Pythonを下記URLからインストール 
-  https://www.python.org/downloads/ 
- ③MariaDBを下記URLからインストール 
-  https://mariadb.org/ 
- ④コマンドプロントを開き、「pip install flask」と記入してEnterを押し 
-  Flaskをインストール 
- ⑤タスク管理アプリのファイル上で右クリックをしてCodeで開くを選択 
- ⑥開いた画面の左側のmain.pyを選択 
- ⑦コードが記載された画面(右側)で右クリックをしてPythonの実行からターミナルで 
-  Pythonファイルを実行するを選択 
- ⑧Python実行後、下段のコマンドプロントに表示された下記URLでCtrl＋クリック 
-  を行い、ブラウザ（Microsoft Edge ）でタスク管理アプリを開いておく 
-  http://127.0.0.1:2000/ 
+#### ※①～③に関しては使用PCに合うものをインストールすること 
+#### ①Visual Studio Codeを下記URLからインストール 
+####  https://code.visualstudio.com/ 
+#### ②Pythonを下記URLからインストール 
+####  https://www.python.org/downloads/ 
+#### ③MariaDBを下記URLからインストール 
+####  https://mariadb.org/ 
+#### ④コマンドプロントを開き、「pip install flask」と記入してEnterを押しFlaskをインストール 
+#### ⑤タスク管理アプリのファイル上で右クリックをしてCodeで開くを選択 
+#### ⑥開いた画面の左側のmain.pyを選択 
+#### ⑦コードが記載された画面(右側)で右クリックをしてPythonの実行からターミナルでPythonファイルを実行するを選択 
+#### ⑧Python実行後、下段のコマンドプロントに表示された下記URLでCtrl＋クリック を行い、ブラウザ（Microsoft Edge ）でタスク管理アプリを開いておく
+#### http://127.0.0.1:2000/ 
 
    
