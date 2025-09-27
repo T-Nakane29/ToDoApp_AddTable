@@ -22,7 +22,12 @@
 ####  https://www.python.org/downloads/ 
 #### ③MariaDBを下記URLからインストール 
 ####  https://mariadb.org/ 
-#### ④コマンドプロントを開き、「pip install flask」と記入してEnterを押しFlaskをインストール 
+#### ④<img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
+
+#### ④コマンドプロントを開き、
+#### 「pip install flask」と記入してEnterを押しFlaskをインストール
+#### 「pip install mysql-connector-python」と記入してEnterを押しインストール
+####  上記と同様に主要ライブラリをインストール
 #### ⑤タスク管理アプリのファイル上で右クリックをしてCodeで開くを選択 
 #### ⑥開いた画面の左側のmain.pyを選択 
 #### ⑦コードが記載された画面(右側)で右クリックをしてPythonの実行からターミナルでPythonファイルを実行するを選択 
@@ -30,6 +35,9 @@
 #### http://127.0.0.1:2000/ 
 ## 
 ## ◎使用方法
+### ※初期利用時
+### ①ログイン時に｢中根 貴仁｣と記入してください
+### ②
 ### ●新規タスク登録から一覧表示 
 #### ①一覧画面より新規タスク登録ボタンを選択 
 #### ②新規タスク入力画面にて条件の値を記入及び選択 
