@@ -39,18 +39,21 @@
 ### ※初期利用及び新規ユーザー登録について
 ### ①ログイン時に｢中根 貴仁｣と記入
 ### ②ログイン後にユーザー登録ボタンを押し、使用する方の名前を入力し登録ボタンを押す
-### <img width="125" height="54" alt="image" src="https://github.com/user-attachments/assets/2afe3340-a6a5-4924-b0cc-262d0476086d" />
 ### <img width="484" height="184" alt="image" src="https://github.com/user-attachments/assets/57343ddf-5330-4ddc-b0ba-e77b10a288d1" />
 ### ●新規タスク登録から一覧表示 
 #### ①一覧画面より新規タスク登録ボタンを選択 
-#### ②新規タスク入力画面にて条件の値を記入及び選択 
+#### ②新規タスク入力画面にて条件の値を記入及び選択
+#### <img width="487" height="497" alt="image" src="https://github.com/user-attachments/assets/66cbd915-9dbf-4553-8f31-949885a77300" />
 #### ③登録ボタンを選択 
 ### ●編集から一覧表示 
 #### ①一覧画面より編集するタスクの編集ボタンを選択 
-#### ②タスク編集画面にて値を条件の値に変更及び選択 
+#### ②タスク編集画面にて値を条件の値に変更及び選択
+#### <img width="487" height="565" alt="image" src="https://github.com/user-attachments/assets/aab4e661-7b53-44c2-9903-0686ff3654ec" />
 #### ③保存ボタンを選択 
 ### ●削除から一覧表示 
 #### ①一覧画面より削除するタスクの削除ボタンを選択 
-#### ②ホップアップで表示された画面のOKボタンを押す 
+#### ②ホップアップで表示された画面のOKボタンを押す
+#### <img width="440" height="114" alt="image" src="https://github.com/user-attachments/assets/febff9c8-3bba-4dc9-b322-1070741d35fc" />
+
 
    
