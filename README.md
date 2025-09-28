@@ -22,22 +22,25 @@
 ####  https://www.python.org/downloads/ 
 #### ③MariaDBを下記URLからインストール 
 ####  https://mariadb.org/ 
-#### ④<img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
-
-#### ④コマンドプロントを開き、
+#### ④PCの検索から以下のプログラムを検索し、選択する
+<img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
+#### ⑤③でインストール時に設定したパスワードを入力し｢INSERT INTO users (name) VALUES ('中根 貴仁');｣と入力
+#### ⑥コマンドプロントを開き、
 #### 「pip install flask」と記入してEnterを押しFlaskをインストール
 #### 「pip install mysql-connector-python」と記入してEnterを押しインストール
 ####  上記と同様に主要ライブラリをインストール
-#### ⑤タスク管理アプリのファイル上で右クリックをしてCodeで開くを選択 
-#### ⑥開いた画面の左側のmain.pyを選択 
-#### ⑦コードが記載された画面(右側)で右クリックをしてPythonの実行からターミナルでPythonファイルを実行するを選択 
-#### ⑧Python実行後、下段のコマンドプロントに表示された下記URLでCtrl＋クリック を行い、ブラウザ（Microsoft Edge ）でタスク管理アプリを開いておく
+#### ⑦タスク管理アプリのファイル上で右クリックをしてCodeで開くを選択 
+#### ⑧開いた画面の左側のmain.pyを選択 
+#### ⑨コードが記載された画面(右側)で右クリックをしてPythonの実行からターミナルでPythonファイルを実行するを選択 
+#### ⑩Python実行後、下段のコマンドプロントに表示された下記URLでCtrl＋クリック を行い、ブラウザ（Microsoft Edge ）でタスク管理アプリを開いておく
 #### http://127.0.0.1:2000/ 
 ## 
 ## ◎使用方法
 ### ※初期利用時
-### ①ログイン時に｢中根 貴仁｣と記入してください
-### ②
+### ①ログイン時に｢中根 貴仁｣と記入
+### ②ログイン後、ユーザー登録ボタンが表示されますので使用する方の名前を入力し登録ボタンを押す
+### <img width="125" height="54" alt="image" src="https://github.com/user-attachments/assets/2afe3340-a6a5-4924-b0cc-262d0476086d" />
+### <img width="484" height="184" alt="image" src="https://github.com/user-attachments/assets/57343ddf-5330-4ddc-b0ba-e77b10a288d1" />
 ### ●新規タスク登録から一覧表示 
 #### ①一覧画面より新規タスク登録ボタンを選択 
 #### ②新規タスク入力画面にて条件の値を記入及び選択 
