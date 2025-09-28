@@ -23,7 +23,7 @@
 #### ③MariaDBを下記URLからインストール 
 ####  https://mariadb.org/ 
 #### ④PCの検索から以下のプログラムを検索し、選択する
-<img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
+#### <img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
 #### ⑤③でインストール時に設定したパスワードを入力し｢INSERT INTO users (name) VALUES ('中根 貴仁');｣と入力
 #### ⑥コマンドプロントを開き、
 #### 「pip install flask」と記入してEnterを押しFlaskをインストール
@@ -36,9 +36,9 @@
 #### http://127.0.0.1:2000/ 
 ## 
 ## ◎使用方法
-### ※初期利用時
+### ※初期利用及び新規ユーザー登録について
 ### ①ログイン時に｢中根 貴仁｣と記入
-### ②ログイン後、ユーザー登録ボタンが表示されますので使用する方の名前を入力し登録ボタンを押す
+### ②ログイン後にユーザー登録ボタンを押し、使用する方の名前を入力し登録ボタンを押す
 ### <img width="125" height="54" alt="image" src="https://github.com/user-attachments/assets/2afe3340-a6a5-4924-b0cc-262d0476086d" />
 ### <img width="484" height="184" alt="image" src="https://github.com/user-attachments/assets/57343ddf-5330-4ddc-b0ba-e77b10a288d1" />
 ### ●新規タスク登録から一覧表示 
