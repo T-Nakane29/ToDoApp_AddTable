@@ -24,7 +24,7 @@
 ####  https://mariadb.org/ 
 #### ④PCの検索から以下のプログラムを検索し、選択する
 #### <img width="363" height="108" alt="image" src="https://github.com/user-attachments/assets/0baeb5b4-1cda-4e8e-9024-ac97f943f8ad" />
-#### ⑤③でインストール時に設定したパスワードを入力し｢INSERT INTO users (name) VALUES ('中根 貴仁');｣と入力
+#### ⑤③でインストール時に設定したパスワードを入力し｢INSERT INTO users (name) VALUES ('admin_clover_sun');｣と入力
 #### ⑥コマンドプロントを開き、
 #### 「pip install flask」と記入してEnterを押しFlaskをインストール
 #### 「pip install mysql-connector-python」と記入してEnterを押しインストール
@@ -37,8 +37,9 @@
 ## 
 ## ◎使用方法
 ### ※初期利用及び新規ユーザー登録について
-### ①ログイン時に｢中根 貴仁｣と記入
+### ①ログイン時に｢admin_clover_sun｣と記入
 ### ②ログイン後にユーザー登録ボタンを押し、使用する方の名前を入力し登録ボタンを押す
+### ③登録後は登録した名前でログインが可能で、①の名前でログインするとすべての保存されたtodoリストを閲覧可能
 ### <img width="484" height="184" alt="image" src="https://github.com/user-attachments/assets/57343ddf-5330-4ddc-b0ba-e77b10a288d1" />
 ### ●新規タスク登録から一覧表示 
 #### ①一覧画面より新規タスク登録ボタンを選択 
